@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <title>matlab_installation_doku.md - Grip</title>
+  <link rel="icon" href="http://localhost:6419/__/grip/static/favicon.ico">
+  <link rel="stylesheet" href="matlab_installation_doku.md%20-%20Grip_files/site-b6816b6bc43ddfcdcdbb2ce5419de4a6.css">
+  <link rel="stylesheet" href="matlab_installation_doku.md%20-%20Grip_files/github-79d79cf68cb64acfbd39e268a77c9c04.css">
+  <link rel="stylesheet" href="matlab_installation_doku.md%20-%20Grip_files/frameworks-639c0d972c797d73248a7cb7d5eb6465.css">
+  <link rel="stylesheet" href="matlab_installation_doku.md%20-%20Grip_files/octicons.css">
+  <style>
+    /* Page tweaks */
+    .preview-page {
+      margin-top: 64px;
+    }
+    /* User-content tweaks */
+    .timeline-comment-wrapper > .timeline-comment:after,
+    .timeline-comment-wrapper > .timeline-comment:before {
+      content: none;
+    }
+    /* User-content overrides */
+    .discussion-timeline.wide {
+      width: 920px;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div id="preview-page" class="preview-page" data-autorefresh-url="/__/grip/refresh/">
+
+    
+
+      <div role="main" class="main-content">
+        <div class="container new-discussion-timeline experiment-repo-nav">
+          <div class="repository-content">
+            <div id="readme" class="readme boxed-group clearfix announce instapaper_body md">
+              
+                <h3>
+                  <span class="octicon octicon-book"></span>
+                  matlab_installation_doku.md
+                </h3>
+              
+              <article class="markdown-body entry-content" itemprop="text" id="grip-content">
+                <h1>
+<a id="user-content-doku-für-matlab--offline-installation" class="anchor" href="#doku-f%C3%BCr-matlab--offline-installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Doku für Matlab  Offline installation</h1>
+<h2>
+<a id="user-content-1-mobaxterm-so-einstellen-dass-auch-mit-sudo-install-funktioniert" class="anchor" href="#1-mobaxterm-so-einstellen-dass-auch-mit-sudo-install-funktioniert" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>1. MobaXterm so einstellen, dass auch mit Sudo ./install funktioniert:</h2>
+<p>In Terminal eingeben.</p>
+<div class="highlight highlight-source-shell"><pre>    sudo xauth add <span class="pl-s"><span class="pl-pds">$(</span>xauth -f <span class="pl-k">~</span>jan/.Xauthority list<span class="pl-k">|</span>tail -1<span class="pl-pds">)</span></span></pre></div>
+<p><a href="https://blog.mobatek.net/post/how-to-keep-X11-display-after-su-or-sudo/" rel="nofollow">https://blog.mobatek.net/post/how-to-keep-X11-display-after-su-or-sudo/</a></p>
+<h2>
+<a id="user-content-2-zuerst-matlab-für-windows-version-runterladen" class="anchor" href="#2-zuerst-matlab-f%C3%BCr-windows-version-runterladen" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>2. Zuerst Matlab für Windows Version runterladen.</h2>
+<p><a href="https://de.mathworks.com/downloads/web_downloads/" rel="nofollow">https://de.mathworks.com/downloads/web_downloads/</a></p>
+<p>Nach dem entpacken auf setup.exe klicken.<br>
+Recht oben auf Matlab download only runterscrollen und wählen.</p>
+<p>Es sollten mindesten 10GB groß sein.</p>
+<p>Nach dem runterladen die ganze Datei auf die Lokale Home Ornder der Server verschieben/kopieren.</p>
+<p>Danach im Matlab Ordner folgenden Befehl eingeben.</p>
+<div class="highlight highlight-source-shell"><pre>	sudo unzip -X -K matlab_R2020b_glnxa64.zip </pre></div>
+<h2>
+<a id="user-content-3-lizenz-aktivieren-und-die-keys-holen" class="anchor" href="#3-lizenz-aktivieren-und-die-keys-holen" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>3. Lizenz Aktivieren und die Keys holen</h2>
+<p>Hier im Link auf Install und Activate klicken:<br>
+<a href="https://de.mathworks.com/licensecenter/licenses/40871335/6757286/products" rel="nofollow">https://de.mathworks.com/licensecenter/licenses/40871335/6757286/products</a></p>
+<p><a href="http://localhost:6419/images_for_matlab_installation/activate.png" target="_blank" rel="noopener noreferrer"><img src="matlab_installation_doku.md%20-%20Grip_files/activate.png" alt="Activate" style="max-width:100%;"></a></p>
+<p>Danach auf den Link von "Activate to Retrieve License File" im rechts im Fenster klicken.</p>
+<p><a href="http://localhost:6419/images_for_matlab_installation/activate2.png" target="_blank" rel="noopener noreferrer"><img src="matlab_installation_doku.md%20-%20Grip_files/activate2.png" alt="Activate" style="max-width:100%;"></a></p>
+<p>Nach dem klicken auf auf  "Activate auf Computer" erscheint folgendes Fenster:</p>
+<p><a href="http://localhost:6419/images_for_matlab_installation/activate3.png" target="_blank" rel="noopener noreferrer"><img src="matlab_installation_doku.md%20-%20Grip_files/activate3.png" alt="Activate" style="max-width:100%;"></a></p>
+<p>Operation System:   Linux<br>
+Host ID         :   Die Mac Adresse der Server eingeben.<br>
+Für Host ID folgendes eintippen.</p>
+<div class="highlight highlight-source-shell"><pre>	ip addr <span class="pl-k">|</span> grep ether</pre></div>
+<p>Computer-Login Name:  beispiel dein Username für den Server bst: Jan</p>
+<p>Activation Label:  s-csb-gpu  - name für den Rechenr</p>
+<p><a href="http://localhost:6419/images_for_matlab_installation/get_hostid.png" target="_blank" rel="noopener noreferrer"><img src="matlab_installation_doku.md%20-%20Grip_files/get_hostid.png" alt="Activate" style="max-width:100%;"></a></p>
+<p>Danach sollte die Fileinstallation Key und File zur verfügung stehen.<br>
+Bei der Frage ob Matlab schon installiert ist auf nein klicken.</p>
+<p>Die File runterladen und den Key speichern.</p>
+<p><a href="http://localhost:6419/images_for_matlab_installation/file_installation_key.png" target="_blank" rel="noopener noreferrer"><img src="matlab_installation_doku.md%20-%20Grip_files/file_installation_key.png" alt="Activate" style="max-width:100%;"></a></p>
+<h2>
+<a id="user-content-4-matlab-installieren" class="anchor" href="#4-matlab-installieren" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>4. Matlab Installieren.</h2>
+<p>Im Ornder von Matlab/</p>
+<div class="highlight highlight-source-shell"><pre>	sudo ./install</pre></div>
+<p>Danach Sollte Matlab Installations Fenster erscheinen.</p>
+<p>Hier zustimmen.</p>
+<p><a href="http://localhost:6419/images_for_matlab_installation/installation.png" target="_blank" rel="noopener noreferrer"><img src="matlab_installation_doku.md%20-%20Grip_files/installation.png" alt="Installieren" style="max-width:100%;"></a></p>
+<p>Hier werden nach den Key und File gefragt, welche wir vorher runtergeladen haben.</p>
+<p><a href="http://localhost:6419/images_for_matlab_installation/installation2.png" target="_blank" rel="noopener noreferrer"><img src="matlab_installation_doku.md%20-%20Grip_files/installation2.png" alt="Installieren" style="max-width:100%;"></a></p>
+<p><a href="http://localhost:6419/images_for_matlab_installation/installation3.png" target="_blank" rel="noopener noreferrer"><img src="matlab_installation_doku.md%20-%20Grip_files/installation3.png" alt="Installieren" style="max-width:100%;"></a></p>
+<p>Danach kommt die Installation.</p>
+
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    
+
+  </div>
+  <div>&nbsp;</div>
+  </div><script>
+    function showCanonicalImages() {
+      var images = document.getElementsByTagName('img');
+      if (!images) {
+        return;
+      }
+      for (var index = 0; index < images.length; index++) {
+        var image = images[index];
+        if (image.getAttribute('data-canonical-src') && image.src !== image.getAttribute('data-canonical-src')) {
+          image.src = image.getAttribute('data-canonical-src');
+        }
+      }
+    }
+
+    function scrollToHash() {
+      if (location.hash && !document.querySelector(':target')) {
+        var element = document.getElementById('user-content-' + location.hash.slice(1));
+        if (element) {
+           element.scrollIntoView();
+        }
+      }
+    }
+
+    function autorefreshContent(eventSourceUrl) {
+      var initialTitle = document.title;
+      var contentElement = document.getElementById('grip-content');
+      var source = new EventSource(eventSourceUrl);
+      var isRendering = false;
+
+      source.onmessage = function(ev) {
+        var msg = JSON.parse(ev.data);
+        if (msg.updating) {
+          isRendering = true;
+          document.title = '(Rendering) ' + document.title;
+        } else {
+          isRendering = false;
+          document.title = initialTitle;
+          contentElement.innerHTML = msg.content;
+          showCanonicalImages();
+        }
+      }
+
+      source.onerror = function(e) {
+        if (e.readyState === EventSource.CLOSED && isRendering) {
+          isRendering = false;
+          document.title = initialTitle;
+        }
+      }
+    }
+
+    window.onhashchange = function() {
+      scrollToHash();
+    }
+
+    window.onload = function() {
+      scrollToHash();
+    }
+
+    showCanonicalImages();
+
+    var autorefreshUrl = document.getElementById('preview-page').getAttribute('data-autorefresh-url');
+    if (autorefreshUrl) {
+      autorefreshContent(autorefreshUrl);
+    }
+  </script>
+
+</body></html>
